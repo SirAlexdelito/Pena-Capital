@@ -1,1 +1,1 @@
-# Pena-Capital
+# Pena Capital
