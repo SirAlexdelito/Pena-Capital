@@ -31,9 +31,9 @@ public class InventoryManager : MonoBehaviour
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
             var ItemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
-            //var ItemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+            var ItemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
             ItemName.text = item.itemName;
-            //ItemIcon.sprite = item.icon; 
+            ItemIcon.sprite = item.icon;
         }
     }
 }
