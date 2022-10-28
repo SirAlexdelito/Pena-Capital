@@ -10,6 +10,7 @@ public class OpenInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Inventory.SetActive(false);
         InventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
     }
@@ -20,8 +21,13 @@ public class OpenInventory : MonoBehaviour
         InventoryManager.ListItems();
         if (Input.GetButtonDown("OpenInventory"))
         {
-            if (Inventory.active) Inventory.SetActive(false);
-            else Inventory.SetActive(true);
+            if (Inventory.active) { 
+                Inventory.SetActive(false);
+            }
+            else {
+                Inventory.SetActive(true);
+            }
         }
+        
     }
 }
