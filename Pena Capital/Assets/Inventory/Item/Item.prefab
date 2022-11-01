@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1173640194410808963}
   - component: {fileID: 1173640194410808960}
   - component: {fileID: 1818176352225189863}
-  - component: {fileID: 7329613643128777162}
+  - component: {fileID: -1947785643488380058}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1173640194410808963}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -1947785643488380058}
+        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
+        m_MethodName: Use
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1818176352225189863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,40 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1173640194410808960}
-          m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-          m_MethodName: Select
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1173640194410808960}
-          m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-          m_MethodName: Select
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &7329613643128777162
+  m_Delegates: []
+--- !u!114 &-1947785643488380058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,9 +236,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1173640194410808974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea4181ddae565c54a90e58acfec9251f, type: 3}
+  m_Script: {fileID: 11500000, guid: a40a2465651d6b84c859f86ce3813f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 5772285580407511524, guid: f174cb12c7cc1a34584076c291f2bc52, type: 3}
+  Item: {fileID: 0}
 --- !u!1 &6071713947991093056
 GameObject:
   m_ObjectHideFlags: 0

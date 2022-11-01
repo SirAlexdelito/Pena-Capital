@@ -6,15 +6,7 @@ using UnityEngine;
 public class InteractableObject : ScriptableObject
 {
     public int id;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string itemName;
+    public int value;
+    public void Use() { }
 }

@@ -18,16 +18,22 @@ public class OpenInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InventoryManager.ListItems();
+        
         if (Input.GetButtonDown("OpenInventory"))
         {
+            
             if (Inventory.active) { 
                 Inventory.SetActive(false);
             }
             else {
+                InventoryManager.ListItems();
                 Inventory.SetActive(true);
             }
         }
         
+    }
+    public void Close()
+    {
+        Inventory.SetActive(false);
     }
 }

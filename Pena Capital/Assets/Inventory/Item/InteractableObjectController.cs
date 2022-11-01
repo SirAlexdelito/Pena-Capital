@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class InteractableObjectController : MonoBehaviour
 {
-    InteractableObject InteractableObject;
+    public InteractableObject InteractableObject;
 }
