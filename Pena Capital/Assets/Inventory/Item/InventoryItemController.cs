@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 public class InventoryItemController : MonoBehaviour
 {
-    public InventoryManager inventory;
+    public GameObject Inventory;
     public Item Item;
     public void AddItem(Item nItem)
     {
@@ -12,7 +12,8 @@ public class InventoryItemController : MonoBehaviour
     }
     public void Use()
     {
-        inventory.SetSelected(Item);
-        
+        InventoryManager.Instance.SetSelected(Item);
+        CursorVisibility.Instance.Close();
+        OpenInventory.Instance.Close();
     }
 }

@@ -9,6 +9,7 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
     public List<Item> Items = new List<Item>();
     public Transform ItemContent;
+    public Transform SelectedContent;
     public GameObject InventoryItem;
     public InventoryItemController[] InventoryItems;
     public Item selected;
@@ -39,18 +40,22 @@ public class InventoryManager : MonoBehaviour
             }
         }
         SetInventoryItems();
-        Item x = selected;
     }
     public void SetInventoryItems()
     {
         InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
-        // InventoryItems = new InventoryItemController[50];
-        for (int i = 0; i < Items.Count; i++)
-        {
+        for (int i = 0; i < Items.Count; i++) 
             InventoryItems[i].AddItem(Items[i]);
-        }
     }
     public void SetSelected(Item i){
+        foreach(Transform t in SelectedContent)
+            Destroy(t.gameObject);
         selected=i;
+        GameObject obj = Instantiate(InventoryItem, SelectedContent);
+                var ItemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
+                var ItemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+                ItemName.text = i.itemName;
+                ItemIcon.sprite = i.icon;
+        
     }
 }
