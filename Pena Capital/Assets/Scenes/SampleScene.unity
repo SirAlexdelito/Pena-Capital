@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -822,6 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8e58c12a87b1b4c8933f7bcc946ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  g: -75
 --- !u!65 &257419473
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3108,6 +3109,7 @@ GameObject:
   - component: {fileID: 849836257}
   - component: {fileID: 849836256}
   - component: {fileID: 849836258}
+  - component: {fileID: 849836259}
   m_Layer: 0
   m_Name: Puerta-celda2
   m_TagString: Untagged
@@ -3193,6 +3195,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.011854266, y: 0.08715453, z: 0.16977203}
   m_Center: {x: 0.00008566048, y: 0.039317448, z: 0.010922538}
+--- !u!114 &849836259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849836254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8e58c12a87b1b4c8933f7bcc946ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  g: -75
 --- !u!1 &876945998 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -4086,12 +4101,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218939578}
   m_LocalRotation: {x: 0.693211, y: -0.033247158, z: 0.04291863, w: 0.7186871}
-  m_LocalPosition: {x: 76.8, y: 32.7, z: 74.1}
-  m_LocalScale: {x: 0.056749016, y: 0.02721399, z: 0.056749016}
+  m_LocalPosition: {x: 27.328001, y: 27.812, z: -167.883}
+  m_LocalScale: {x: 0.011329791, y: 0.0046358635, z: 0.009647567}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8291800082753768549}
-  m_RootOrder: 31
+  m_Father: {fileID: 0}
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 87.792, y: 17.7, z: 23.876}
 --- !u!108 &1218939580
 Light:
@@ -5999,7 +6014,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8291800082753768549}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 75.697}
 --- !u!65 &1693612227
 BoxCollider:
@@ -7670,6 +7685,7 @@ GameObject:
   - component: {fileID: 1007378332985251714}
   - component: {fileID: 3034891821731947336}
   - component: {fileID: 4203326115307968552}
+  - component: {fileID: 4203326115307968553}
   m_Layer: 0
   m_Name: Puerta-celda4
   m_TagString: Untagged
@@ -7740,6 +7756,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.011854266, y: 0.08715453, z: 0.16977203}
   m_Center: {x: 0.00008572009, y: 0.039317448, z: 0.010922657}
+--- !u!114 &4203326115307968553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539519762121720477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8e58c12a87b1b4c8933f7bcc946ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  g: 75
 --- !u!1 &4249112316834917045
 GameObject:
   m_ObjectHideFlags: 0
@@ -8132,7 +8161,6 @@ Transform:
   - {fileID: 1042458139}
   - {fileID: 137841666}
   - {fileID: 1499581142}
-  - {fileID: 1218939579}
   - {fileID: 1693612226}
   m_Father: {fileID: 0}
   m_RootOrder: 0
