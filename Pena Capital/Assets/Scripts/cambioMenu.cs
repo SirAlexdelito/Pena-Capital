@@ -36,5 +36,10 @@ public class cambioMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void VolverMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }
 
