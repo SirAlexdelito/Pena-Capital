@@ -36,3 +36,4 @@ public class OpenLockedDoor : MonoBehaviour
         if (coroutineAllowed)
             {StartCoroutine("OpenThatDoor");}
     }
+}
