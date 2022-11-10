@@ -36,4 +36,54 @@ public class OpenLockedDoor : MonoBehaviour
         if (coroutineAllowed)
             {StartCoroutine("OpenThatDoor");}
     }
+
+    private IEnumerator OpenThatDoor()
+    {
+        if (IM.selected != null && IM.selected.itemName == comprobar)
+        {
+            coroutineAllowed = false;
+            if (g>=0)
+            {
+                if (!doorOpened)
+                {
+                    for (float i = b; i <= (b + g); i += 3f)
+                    {
+                        transform.localRotation = Quaternion.Euler(a, +i, c);
+                        yield return new WaitForSeconds(0f);
+                    }
+                    doorOpened = true;
+                }
+                else
+                {
+                    for (float i = (b + g); i >= b; i -= 3f)
+                    {
+                        transform.localRotation = Quaternion.Euler(a, +i, c);
+                        yield return new WaitForSeconds(0f);
+                    }
+                    doorOpened = false;
+                }
+            }
+            else {
+                if (!doorOpened)
+                {
+                    for (float i = b; i >= (b + g); i -= 3f)
+                    {
+                        transform.localRotation = Quaternion.Euler(a, +i, c);
+                        yield return new WaitForSeconds(0f);
+                    }
+                    doorOpened = true;
+                }
+                else
+                {
+                    for (float i = (b + g); i <= b; i += 3f)
+                    {
+                        transform.localRotation = Quaternion.Euler(a, +i, c);
+                        yield return new WaitForSeconds(0f);
+                    }
+                    doorOpened = false;
+                }
+            }
+            coroutineAllowed = true;
+        }
+    }
 }
