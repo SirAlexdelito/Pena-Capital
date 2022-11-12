@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InventoryManager
   - FirstPersonController
+  - DisplayText
   layers:
   - Default
   - TransparentFX
