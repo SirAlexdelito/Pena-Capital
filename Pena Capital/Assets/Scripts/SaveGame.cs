@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using CI.QuickSave;
 using UnityEngine;
@@ -9,6 +11,14 @@ public class SaveGame : MonoBehaviour
 {
     public void save()
     {
+        try{
+            var s = (Application.persistentDataPath.ToString() + "\\QuickSave\\");
+            var dir = Directory.CreateDirectory(s);
+            foreach(FileInfo d in  dir.GetFiles()) 
+            d.Delete();
+        }catch(Exception e){
+            Console.WriteLine("asdf");
+        }
         var character = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<Transform>();
         var IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         var qSave = QuickSaveWriter.Create("DATA");
@@ -60,7 +70,8 @@ public class SaveGame : MonoBehaviour
                 }
         }
         IM.InventoryItems = new InventoryItemController[IM.InventoryItems.Count()];
-        foreach(var i in IM.ItemContent.GetComponentsInChildren<Transform>()) GameObject.Destroy(i);
+        foreach(Transform i in IM.ItemContent.transform) 
+            GameObject.Destroy(i.gameObject);
         IM.Items = InventoryItems;
         characterController.loadlock=true;
         character.position = pos;
