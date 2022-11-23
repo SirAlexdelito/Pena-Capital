@@ -57,6 +57,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
             cursorvisible = false;
+            loadlock = false;
         }
 
 
@@ -127,14 +128,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
             }
-            m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
-
+            if(!loadlock){
+                m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
+                
+            }else{
+                new WaitForEndOfFrame();
+                loadlock=false;
+            }
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
 
             //m_MouseLook.UpdateCursorLock();
         }
-
+        public bool loadlock;
 
         private void PlayJumpSound()
         {

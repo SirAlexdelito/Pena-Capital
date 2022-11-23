@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CI.QuickSave;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class SaveGame : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class SaveGame : MonoBehaviour
     public void load()
     {
         var character = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<Transform>();
+        var characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
         var IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         var qRead = QuickSaveReader.Create("DATA");
         var pos = qRead.Read<Vector3>("Position");
@@ -57,7 +59,10 @@ public class SaveGame : MonoBehaviour
                     o.GetComponent<OpenLockedDoor>().doorOpened = !o.GetComponent<OpenLockedDoor>().doorOpened;
                 }
         }
+        IM.InventoryItems = new InventoryItemController[IM.InventoryItems.Count()];
+        foreach(var i in IM.ItemContent.GetComponentsInChildren<Transform>()) GameObject.Destroy(i);
         IM.Items = InventoryItems;
+        characterController.loadlock=true;
         character.position = pos;
     }
 }

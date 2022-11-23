@@ -1214,7 +1214,7 @@ GameObject:
   - component: {fileID: 257419473}
   m_Layer: 0
   m_Name: Puerta-celda1
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1296,7 +1296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8e58c12a87b1b4c8933f7bcc946ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpened: 0
   g: -75
+  Inventory: {fileID: 0}
 --- !u!65 &257419473
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1529,7 +1531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Llave
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3246,7 +3248,7 @@ GameObject:
   - component: {fileID: 560117482}
   m_Layer: 0
   m_Name: Puerta-garita
-  m_TagString: Untagged
+  m_TagString: LockedDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3278,6 +3280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1226676543ecb4d97344b0a3e5a03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpened: 0
   g: 75
   comprobar: Nota
 --- !u!65 &560117483
@@ -3577,7 +3580,7 @@ GameObject:
   - component: {fileID: 614508422}
   m_Layer: 0
   m_Name: "puerta sala ejecuci\xF3n (1)"
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3622,7 +3625,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8e58c12a87b1b4c8933f7bcc946ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpened: 0
   g: 75
+  Inventory: {fileID: 0}
 --- !u!23 &614508424
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4213,7 +4218,7 @@ GameObject:
   - component: {fileID: 849836259}
   m_Layer: 0
   m_Name: Puerta-celda2
-  m_TagString: Untagged
+  m_TagString: LockedDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4308,6 +4313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1226676543ecb4d97344b0a3e5a03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpened: 0
   g: -75
   comprobar: 1-3Key
 --- !u!1 &876945998 stripped
@@ -9693,7 +9699,7 @@ GameObject:
   - component: {fileID: 4203326115307968553}
   m_Layer: 0
   m_Name: Puerta-celda4
-  m_TagString: Untagged
+  m_TagString: LockedDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9773,6 +9779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1226676543ecb4d97344b0a3e5a03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpened: 0
   g: 75
   comprobar: 2-2Key
 --- !u!1 &4249112316834917045
@@ -9846,7 +9853,7 @@ GameObject:
   - component: {fileID: 9076480309716313857}
   m_Layer: 0
   m_Name: "puerta sala ejecuci\xF3n"
-  m_TagString: Untagged
+  m_TagString: LockedDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10291,6 +10298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1226676543ecb4d97344b0a3e5a03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpened: 0
   g: -75
   comprobar: Execution room key
 --- !u!23 &9119146417761135231

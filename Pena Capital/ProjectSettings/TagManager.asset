@@ -8,6 +8,9 @@ TagManager:
   - FirstPersonController
   - DisplayText
   - PickeableObject
+  - Inventory
+  - Door
+  - LockedDoor
   layers:
   - Default
   - TransparentFX
