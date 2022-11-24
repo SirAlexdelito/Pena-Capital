@@ -5,20 +5,25 @@ using System.IO;
 using System.Linq;
 using CI.QuickSave;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class SaveGame : MonoBehaviour
 {
     public void save()
     {
-        try{
+        try
+        {
             var s = (Application.persistentDataPath.ToString() + "\\QuickSave\\");
             var dir = Directory.CreateDirectory(s);
-            foreach(FileInfo d in  dir.GetFiles()) 
-            d.Delete();
-        }catch(Exception e){
+            foreach (FileInfo d in dir.GetFiles())
+                d.Delete();
+        }
+        catch (Exception e)
+        {
             Console.WriteLine("asdf");
         }
+        var screen = GameObject.FindGameObjectWithTag("Screen");
         var character = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<Transform>();
         var IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         var qSave = QuickSaveWriter.Create("DATA");
@@ -34,9 +39,12 @@ public class SaveGame : MonoBehaviour
         }
         IM.Items.ForEach(i => qSave.Write("Iinventory: " + i.name, i));
         qSave.Commit();
+        screen.SetActive(false);
+        CursorVisibility.Instance.Close();
     }
     public void load()
     {
+        var screen = GameObject.FindGameObjectWithTag("Screen");
         var character = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<Transform>();
         var characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
         var IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
@@ -70,10 +78,12 @@ public class SaveGame : MonoBehaviour
                 }
         }
         IM.InventoryItems = new InventoryItemController[IM.InventoryItems.Count()];
-        foreach(Transform i in IM.ItemContent.transform) 
+        foreach (Transform i in IM.ItemContent.transform)
             GameObject.Destroy(i.gameObject);
         IM.Items = InventoryItems;
-        characterController.loadlock=true;
+        characterController.loadlock = true;
         character.position = pos;
+        screen.SetActive(false);
+        CursorVisibility.Instance.Close();
     }
 }

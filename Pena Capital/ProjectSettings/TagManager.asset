@@ -11,6 +11,7 @@ TagManager:
   - Inventory
   - Door
   - LockedDoor
+  - Screen
   layers:
   - Default
   - TransparentFX
