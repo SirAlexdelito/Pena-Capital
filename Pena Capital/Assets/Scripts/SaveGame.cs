@@ -27,6 +27,7 @@ public class SaveGame : MonoBehaviour
         var character = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<Transform>();
         var IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         var qSave = QuickSaveWriter.Create("DATA");
+        qSave.Write("Scene",SceneManager.GetActiveScene().name);
         qSave.Write("Position", character.position);
         foreach (var i in Resources.FindObjectsOfTypeAll<GameObject>())
         {
@@ -49,6 +50,8 @@ public class SaveGame : MonoBehaviour
         var characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
         var IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         var qRead = QuickSaveReader.Create("DATA");
+        string s = qRead.Read<string>("Scene");
+        SceneManager.LoadScene(s);
         var pos = qRead.Read<Vector3>("Position");
         var levelItems = new List<string>();
         var InventoryItems = new List<Item>();
