@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &30648728340912300
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.901537
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -29.382387
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.0155
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8373624351749411742, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b0bb7880c91bad42ab66fc66374ecb9, type: 2}
+    - target: {fileID: -5836552744715497169, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b0bb7880c91bad42ab66fc66374ecb9, type: 2}
+    - target: {fileID: 919132149155446097, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_Name
+      value: mesa y sillas cocina
+      objectReference: {fileID: 0}
+    - target: {fileID: 2831065782900121813, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b0bb7880c91bad42ab66fc66374ecb9, type: 2}
+    - target: {fileID: 2859871894437737518, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b0bb7880c91bad42ab66fc66374ecb9, type: 2}
+    - target: {fileID: 3064996585800440369, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b0bb7880c91bad42ab66fc66374ecb9, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e890e84171d17404a9e65fbd7f0f8eea, type: 3}
