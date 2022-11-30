@@ -50,8 +50,8 @@ public class SaveGame : MonoBehaviour
         var characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
         var IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         var qRead = QuickSaveReader.Create("DATA");
-        string s = qRead.Read<string>("Scene");
-        SceneManager.LoadScene(s);
+        // string s = qRead.Read<string>("Scene");
+        // SceneManager.LoadScene(s);
         var pos = qRead.Read<Vector3>("Position");
         var levelItems = new List<string>();
         var InventoryItems = new List<Item>();
