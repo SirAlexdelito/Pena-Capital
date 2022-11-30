@@ -23,7 +23,7 @@ public class OpenInventory : MonoBehaviour
         if (Input.GetButtonDown("OpenInventory"))
         {
             
-            if (Inventory.active) { 
+            if (Inventory.activeSelf) { 
                 Inventory.SetActive(false);
             }
             else {

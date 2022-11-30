@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    private bool doorOpened;
+    public bool doorOpened;
     private bool coroutineAllowed;
     private float a;
     private float b;
     private float c;
     public float g;
-
+    public GameObject Inventory;
     //public GameObject doorWing; 
 
     // Start is called before the first frame update
@@ -17,9 +17,12 @@ public class OpenDoor : MonoBehaviour
     {
         doorOpened = false;
         coroutineAllowed = true;
-        a=transform.localRotation.eulerAngles.x;
-        b=transform.localRotation.eulerAngles.y;
-        c=transform.localRotation.eulerAngles.z;
+        a = transform.localRotation.eulerAngles.x;
+        b = transform.localRotation.eulerAngles.y;
+        c = transform.localRotation.eulerAngles.z;
+        foreach (GameObject x in Resources.FindObjectsOfTypeAll<GameObject>())
+            if (((GameObject)x).CompareTag("Inventory"))
+                Inventory = x;
     }
 
     private void OnMouseDown()
@@ -30,52 +33,72 @@ public class OpenDoor : MonoBehaviour
     private void RunCoroutine()
     {
         if (coroutineAllowed)
-            {StartCoroutine("OpenThatDoor");}
+        { StartCoroutine("OpenThatDoor"); }
     }
 
     private IEnumerator OpenThatDoor()
     {
-        coroutineAllowed = false;
-        if (g>=0){
+        if (!Inventory.activeSelf)
+        {
             if (!doorOpened)
             {
-                for (float i = b; i <= (b + g); i += 3f)
+                coroutineAllowed = false;
+                if (g >= 0)
                 {
-                    transform.localRotation = Quaternion.Euler(a, +i, c);
-                    yield return new WaitForSeconds(0f);
+                    if (!doorOpened)
+                    {
+                        for (float i = b; i <= (b + g); i += 3f)
+                        {
+                            transform.localRotation = Quaternion.Euler(a, +i, c);
+                            yield return new WaitForSeconds(0f);
+                        }
+                        doorOpened = true;
+                    }
+                    else
+                    {
+                        for (float i = (b + g); i >= b; i -= 3f)
+                        {
+                            transform.localRotation = Quaternion.Euler(a, +i, c);
+                            yield return new WaitForSeconds(0f);
+                        }
+                        doorOpened = false;
+                    }
                 }
-                doorOpened = true;
-            }
-            else
-            {
-                for (float i = (b + g); i >= b; i -= 3f)
+                else
                 {
-                    transform.localRotation = Quaternion.Euler(a, +i, c);
-                    yield return new WaitForSeconds(0f);
+                    if (!doorOpened)
+                    {
+                        for (float i = b; i >= (b + g); i -= 3f)
+                        {
+                            transform.localRotation = Quaternion.Euler(a, +i, c);
+                            yield return new WaitForSeconds(0f);
+                        }
+                        doorOpened = true;
+                    }
+                    else
+                    {
+                        for (float i = (b + g); i <= b; i += 3f)
+                        {
+                            transform.localRotation = Quaternion.Euler(a, +i, c);
+                            yield return new WaitForSeconds(0f);
+                        }
+                        doorOpened = false;
+                    }
                 }
-                doorOpened = false;
+                coroutineAllowed = true;
             }
         }
-        else {
-            if (!doorOpened)
-            {
-                for (float i = b; i >= (b + g); i -= 3f)
-                {
-                    transform.localRotation = Quaternion.Euler(a, +i, c);
-                    yield return new WaitForSeconds(0f);
-                }
-                doorOpened = true;
-            }
-            else
-            {
-                for (float i = (b + g); i <= b; i += 3f)
-                {
-                    transform.localRotation = Quaternion.Euler(a, +i, c);
-                    yield return new WaitForSeconds(0f);
-                }
-                doorOpened = false;
-            }
-        }
-            coroutineAllowed = true;
+    }
+    void OnMouseEnter()
+    {
+        if (!doorOpened)
+            if (!Inventory.activeSelf)
+                DisplayText.Instance.changeText("Abrir puerta");
+    }
+    void OnMouseExit()
+    {
+        if (!doorOpened)
+            if (!Inventory.activeSelf)
+                DisplayText.Instance.changeText("");
     }
 }

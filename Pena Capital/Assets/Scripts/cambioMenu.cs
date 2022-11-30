@@ -5,30 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class cambioMenu : MonoBehaviour
 {
+    public GameObject screen;
+    public GameObject opciones;
+    public GameObject creditos;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void EscenaJuego()
     {
         SceneManager.LoadScene("SampleScene");
+
     }
 
     public void EscenaOpciones()
     {
-        SceneManager.LoadScene("Opciones");
+        opciones.SetActive(true);
     }
-
+    public void Countinuar()
+    {
+        screen.SetActive(false);
+        CursorVisibility.Instance.Close();
+    }
     public void EscenaCreditos()
     {
-        SceneManager.LoadScene("creditos");
+        creditos.SetActive(true);
     }
 
     public void Salir()
@@ -38,7 +46,9 @@ public class cambioMenu : MonoBehaviour
 
     public void VolverMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        screen.SetActive(true);
+        opciones.SetActive(false);
+        creditos.SetActive(false);
     }
 
 }
