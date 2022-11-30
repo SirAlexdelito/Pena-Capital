@@ -9,15 +9,6 @@ public class ItemPickUp : MonoBehaviour
     {
         InventoryManager.Instance.Add(Item);
         Destroy(gameObject);
-        DisplayText.Instance.changeText("");
     }
-    void OnMouseDown(){
-        PickUp();
-    }
-    void OnMouseEnter(){
-        DisplayText.Instance.changeText("Coger " + Item.name);
-    }
-    void OnMouseExit(){
-        DisplayText.Instance.changeText("");
-    }
+    private void OnMouseDown() { PickUp(); }
 }

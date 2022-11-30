@@ -3,6 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< Updated upstream
   tags:
   - InventoryManager
   - FirstPersonController
@@ -12,6 +13,9 @@ TagManager:
   - Door
   - LockedDoor
   - Screen
+=======
+  tags: []
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
