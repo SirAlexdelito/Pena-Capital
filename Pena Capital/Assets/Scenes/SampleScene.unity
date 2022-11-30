@@ -3255,6 +3255,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.038368355, y: 0.009044933, z: 0.07891172}
   m_Center: {x: 0.00040500608, y: 0.0008450189, z: 0.0016229895}
+--- !u!4 &791537830 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8293348164098774596, guid: d4cf723d276a08d42beb6f52bf2ef68a, type: 3}
+  m_PrefabInstance: {fileID: 8293348165552977784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &805393479
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,6 +3661,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ae247e849bcae794288de339e87c9c09, type: 3}
   m_PrefabInstance: {fileID: 242327261}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &898344279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898344280}
+  - component: {fileID: 898344281}
+  m_Layer: 0
+  m_Name: TPCasa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &898344280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898344279}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 791537830}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &898344281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898344279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f31a8cb79b27af440b67831ecd0d374f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 0}
+  character: {fileID: 0}
 --- !u!4 &908309044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fba2c0b9a22113a4fb722ad2e77237f2, type: 3}
@@ -8095,6 +8146,7 @@ GameObject:
   - component: {fileID: 8563197027609943391}
   - component: {fileID: 1681064441414775157}
   - component: {fileID: 8563197027609943392}
+  - component: {fileID: 8563197027609943393}
   m_Layer: 0
   m_Name: puerta de salida
   m_TagString: Untagged
@@ -9349,6 +9401,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.088373415, y: 0.038473837, z: 0.18947232}
   m_Center: {x: -0.8147506, y: 1.9787828, z: -0.019868478}
+--- !u!114 &8563197027609943393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832398360139696510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567ed174bd939b543a3248624422113e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interacted: 0
+  actionName: Abrir
+  action: {fileID: 898344281}
 --- !u!1 &8672161100053583583
 GameObject:
   m_ObjectHideFlags: 0
