@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimacionesRemy : MonoBehaviour
 {
     public float velocidadMovimiento = 5.0f;
-    public float velocidadRotación = 200.0f;
+    public float velocidadRotacion = 200.0f;
 
     public Animator anim;//Necesitareis esto
     public float x, y;
@@ -21,11 +21,10 @@ public class AnimacionesRemy : MonoBehaviour
         saltar = false; //Necesitareis esto
         anim = GetComponent<Animator>(); //Necesitareis esto
     }
-    void fixed update(){ 
-        transform.Rotate(0, x * TimeDeltaTime * velocidadRotacion, 0);
-        transform.Translate(0, 0, y * TimeDeltaTime * velocidadMovimiento);
-
-}
+    void update(){ 
+        transform.Rotate(0, x * Time.deltaTime * velocidadRotacion, 0);
+        transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
+    }
 
     void Update()
     {
@@ -42,8 +41,7 @@ public class AnimacionesRemy : MonoBehaviour
       //      rb.AddForce(new Vector3 (0, fuerzaDeSalto, 0). ForceMode.Impulse);
        // }else { andar...
 
-}
-
-        }
     }
+
+}
 
