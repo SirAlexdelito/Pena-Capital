@@ -4,18 +4,46 @@ using UnityEngine;
 
 public class AnimacionesRemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float velocidadMovimiento = 5.0f;
+    public float velocidadRotación = 200.0f;
+
+    public Animator anim;//Necesitareis esto
+    public float x, y;
+
+    public Rigidbody rb;
+    public float fuerzaDeSalto = 8f;
+    public bool saltar; //Necesitareis esto
+    public float velocidadInicial;
+
+
     void Start()
     {
-        anim = GetComponent<Animator>();
+        saltar = false; //Necesitareis esto
+        anim = GetComponent<Animator>(); //Necesitareis esto
     }
+    void fixed update(){ 
+        transform.Rotate(0, x * TimeDeltaTime * velocidadRotacion, 0);
+        transform.Translate(0, 0, y * TimeDeltaTime * velocidadMovimiento);
 
-    // Update is called once per frame
+}
+
     void Update()
     {
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
-        transform.Rotate(0, x * TimeDeltaTime * velocidadRotacion, 0);
-        transform.Translate(0, 0, y * TimeDeltaTime * velocidadMovimiento);
-    }
+       
+        anim.SetFloat("VelX", x);//Necesitareis esto
+        anim.SetFloat("VelY", y);//Necesitareis esto
+
+     //   if (saltar==true) {//Necesitareis esto
+       // if(Input.GetKeyDown(KeyCode.Space))
+      //  {
+       //     anim.setBool("saltar"),true);
+      //      rb.AddForce(new Vector3 (0, fuerzaDeSalto, 0). ForceMode.Impulse);
+       // }else { andar...
+
 }
+
+        }
+    }
+
