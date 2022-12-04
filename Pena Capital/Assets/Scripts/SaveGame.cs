@@ -10,6 +10,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class SaveGame : MonoBehaviour
 {
+    
     public void save()
     {
         try
@@ -27,7 +28,7 @@ public class SaveGame : MonoBehaviour
         var character = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<Transform>();
         var IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         var qSave = QuickSaveWriter.Create("DATA");
-        qSave.Write("Scene",SceneManager.GetActiveScene().name);
+        qSave.Write("Scene",SceneManager.GetActiveScene().buildIndex);
         qSave.Write("Position", character.position);
         foreach (var i in Resources.FindObjectsOfTypeAll<GameObject>())
         {
@@ -43,7 +44,14 @@ public class SaveGame : MonoBehaviour
         screen.SetActive(false);
         CursorVisibility.Instance.Close();
     }
-    public void load()
+    public void load(){
+        var qRead = QuickSaveReader.Create("DATA");
+        if(qRead.Read<int>("Scene") != SceneManager.GetActiveScene().buildIndex)
+            StartCoroutine(AsyncLoadScene(qRead.Read<int>("Scene")));
+        else loadSame();
+    }
+    
+    public void loadSame()
     {
         var screen = GameObject.FindGameObjectWithTag("Screen");
         var character = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<Transform>();
@@ -88,5 +96,11 @@ public class SaveGame : MonoBehaviour
         character.position = pos;
         screen.SetActive(false);
         CursorVisibility.Instance.Close();
+    }
+    public IEnumerator AsyncLoadScene(int scene){
+        yield return  SceneManager.LoadSceneAsync(scene);
+        Debug.Log("1");
+        Debug.Log("2");
+        loadSame();
     }
 }
