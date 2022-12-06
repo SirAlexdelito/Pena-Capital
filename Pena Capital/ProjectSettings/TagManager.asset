@@ -13,6 +13,7 @@ TagManager:
   - LockedDoor
   - Screen
   - Save
+  - Persistent
   layers:
   - Default
   - TransparentFX

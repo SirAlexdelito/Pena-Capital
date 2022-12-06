@@ -8,6 +8,7 @@ public class ItemPickUp : MonoBehaviour
     void PickUp()
     {
         InventoryManager.Instance.Add(Item);
+        SavingElements.Instance.pickedItems.Add(this.gameObject.name);
         Destroy(gameObject);
         DisplayText.Instance.changeText("");
     }

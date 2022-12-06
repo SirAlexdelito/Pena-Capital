@@ -5,16 +5,22 @@ using UnityEngine;
 public class PersistentObjectsSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject persistentObject;
-    private static bool hasSpawned=false;
+    private static bool hasSpawned = false;
 
-    private void Awake(){
-        if(hasSpawned)return;
+    private void Awake()
+    {
+        if (hasSpawned)
+        {
+            return;
+        }
         Spawn();
-        hasSpawned=true;
-        
-    } 
-    void Spawn(){
+        hasSpawned = true;
+
+    }
+    void Spawn()
+    {
         GameObject pO = Instantiate(persistentObject);
-        DontDestroyOnLoad(persistentObject);
+        persistentObject.SetActive(true);
+        DontDestroyOnLoad(pO);
     }
 }

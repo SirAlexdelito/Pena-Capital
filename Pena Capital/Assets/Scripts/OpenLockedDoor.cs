@@ -13,23 +13,33 @@ public class OpenLockedDoor : MonoBehaviour
     private GameObject Inventory;
     public float g;
     public string comprobar;
-
+    //-90,0,-75
+    public Quaternion startingPos{ get;private set;}
+    public Quaternion actualPos{get;private set;}
     //public GameObject doorWing; 
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         doorOpened = false;
         coroutineAllowed = true;
         a = transform.localRotation.eulerAngles.x;
         b = transform.localRotation.eulerAngles.y;
         c = transform.localRotation.eulerAngles.z;
+        startingPos = Quaternion.Euler(a,b,c);
+        actualPos = startingPos;
         IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         foreach (GameObject x in Resources.FindObjectsOfTypeAll<GameObject>())
             if (((GameObject)x).CompareTag("Inventory"))
                 Inventory = x;
     }
-
+    public bool IsOpen(){
+        if(actualPos!=startingPos)
+        return true; else return false;
+    }
+    public void OpenStatic(){
+        doorOpened=true;
+        transform.localRotation = Quaternion.Euler(a, g, c);
+    }
     private void OnMouseDown()
     {
         Invoke("RunCoroutine", 0f);
@@ -59,8 +69,11 @@ public class OpenLockedDoor : MonoBehaviour
                                 for (float i = b; i <= (b + g); i += 3f)
                                 {
                                     transform.localRotation = Quaternion.Euler(a, +i, c);
+                                    actualPos = Quaternion.Euler(a, +i, c);
+                                    
                                     yield return new WaitForSeconds(0f);
                                 }
+                                SavingElements.Instance.lockedDoors.Add(this);
                                 doorOpened = true;
                             }
                             else
@@ -68,6 +81,7 @@ public class OpenLockedDoor : MonoBehaviour
                                 for (float i = (b + g); i >= b; i -= 3f)
                                 {
                                     transform.localRotation = Quaternion.Euler(a, +i, c);
+                                    actualPos = Quaternion.Euler(a, +i, c);
                                     yield return new WaitForSeconds(0f);
                                 }
                                 doorOpened = false;
@@ -80,8 +94,11 @@ public class OpenLockedDoor : MonoBehaviour
                                 for (float i = b; i >= (b + g); i -= 3f)
                                 {
                                     transform.localRotation = Quaternion.Euler(a, +i, c);
+                                    actualPos = Quaternion.Euler(a, +i, c);
+                                    
                                     yield return new WaitForSeconds(0f);
                                 }
+                                SavingElements.Instance.lockedDoors.Add(this);
                                 doorOpened = true;
                             }
                             else
@@ -89,6 +106,7 @@ public class OpenLockedDoor : MonoBehaviour
                                 for (float i = (b + g); i <= b; i += 3f)
                                 {
                                     transform.localRotation = Quaternion.Euler(a, +i, c);
+                                    actualPos = Quaternion.Euler(a, +i, c);
                                     yield return new WaitForSeconds(0f);
                                 }
                                 doorOpened = false;

@@ -485,21 +485,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9189029, y: 1.9499998, z: 0.040926475}
   m_Center: {x: -0.4489199, y: 0.9749999, z: -0.011339353}
---- !u!114 &122692152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122692144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc8e58c12a87b1b4c8933f7bcc946ded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorOpened: 0
-  g: 75
-  Inventory: {fileID: 1240975205}
 --- !u!1001 &138070648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -510,6 +495,10 @@ PrefabInstance:
     - target: {fileID: 1015707552984288, guid: 3865dab15f85624439f27d11cc132971, type: 3}
       propertyPath: m_Name
       value: jj_door_1_white (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015707552984288, guid: 3865dab15f85624439f27d11cc132971, type: 3}
+      propertyPath: m_TagString
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 4754073856193944, guid: 3865dab15f85624439f27d11cc132971, type: 3}
       propertyPath: m_RootOrder
@@ -943,7 +932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpened: 0
   g: -75
-  Inventory: {fileID: 0}
+  Inventory: {fileID: 1240975205}
 --- !u!1001 &306474053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1306,6 +1295,10 @@ PrefabInstance:
     - target: {fileID: 1015707552984288, guid: 3865dab15f85624439f27d11cc132971, type: 3}
       propertyPath: m_Name
       value: jj_door_1_white (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015707552984288, guid: 3865dab15f85624439f27d11cc132971, type: 3}
+      propertyPath: m_TagString
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 4754073856193944, guid: 3865dab15f85624439f27d11cc132971, type: 3}
       propertyPath: m_RootOrder
@@ -2121,6 +2114,10 @@ PrefabInstance:
     - target: {fileID: 1015707552984288, guid: 3865dab15f85624439f27d11cc132971, type: 3}
       propertyPath: m_Name
       value: jj_door_1_white (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015707552984288, guid: 3865dab15f85624439f27d11cc132971, type: 3}
+      propertyPath: m_TagString
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 4754073856193944, guid: 3865dab15f85624439f27d11cc132971, type: 3}
       propertyPath: m_RootOrder
@@ -2976,7 +2973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpened: 0
   g: -75
-  Inventory: {fileID: 0}
+  Inventory: {fileID: 1240975205}
 --- !u!1001 &886572645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3891,7 +3888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpened: 0
   g: -75
-  Inventory: {fileID: 0}
+  Inventory: {fileID: 1240975205}
 --- !u!1001 &1217548303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5139,6 +5136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jj_door_1_white
       objectReference: {fileID: 0}
+    - target: {fileID: 1015707552984288, guid: 3865dab15f85624439f27d11cc132971, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 4754073856193944, guid: 3865dab15f85624439f27d11cc132971, type: 3}
       propertyPath: m_RootOrder
       value: 51
@@ -5460,6 +5461,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2812794331487420801, guid: 7c6ec5a6709f031478a4416feb69ee72, type: 3}
+      propertyPath: o
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5070889050769909734, guid: 7c6ec5a6709f031478a4416feb69ee72, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5500,6 +5505,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EscenaOpciones
       objectReference: {fileID: 0}
+    - target: {fileID: 6828363574135332299, guid: 7c6ec5a6709f031478a4416feb69ee72, type: 3}
+      propertyPath: persistentObject
+      value: 
+      objectReference: {fileID: 6259578155694173363, guid: 40c5d273aa8338e4aaa268cadb765c6c, type: 3}
     - target: {fileID: 8380282282390136824, guid: 7c6ec5a6709f031478a4416feb69ee72, type: 3}
       propertyPath: m_Name
       value: SYS
@@ -5507,24 +5516,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 312154921846017726, guid: 7c6ec5a6709f031478a4416feb69ee72, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7c6ec5a6709f031478a4416feb69ee72, type: 3}
---- !u!1 &1974016662 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3650568993127163579, guid: 7c6ec5a6709f031478a4416feb69ee72, type: 3}
-  m_PrefabInstance: {fileID: 1974016661}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1974016663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974016662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30a8b5323a424624ca69ed998cf27b3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  persistentObject: {fileID: 1291716092259830123, guid: c918b3b5c0d6ead4dbfba44a0e541fc1, type: 3}
 --- !u!1 &1974016664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7387790653817047532, guid: 7c6ec5a6709f031478a4416feb69ee72, type: 3}
@@ -6047,7 +6038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpened: 0
   g: -75
-  Inventory: {fileID: 0}
+  Inventory: {fileID: 1240975205}
 --- !u!1001 &2056567691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6203,6 +6194,10 @@ PrefabInstance:
     - target: {fileID: 1015707552984288, guid: 3865dab15f85624439f27d11cc132971, type: 3}
       propertyPath: m_Name
       value: jj_door_1_white (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015707552984288, guid: 3865dab15f85624439f27d11cc132971, type: 3}
+      propertyPath: m_TagString
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 4754073856193944, guid: 3865dab15f85624439f27d11cc132971, type: 3}
       propertyPath: m_RootOrder

@@ -8,7 +8,7 @@ public class loadButton : MonoBehaviour
     private Button button;
     private SaveGame loadSystem;
     void Start(){
-        loadSystem = GameObject.FindGameObjectWithTag("Save").GetComponent<SaveGame>();
+        loadSystem = GameObject.Find("SaveSystem").GetComponent<SaveGame>();
         button = GetComponent<Button>();
         button.onClick.AddListener(loadSystem.load); 
     }

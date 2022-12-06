@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4363874366408444055}
   m_Layer: 0
   m_Name: PersistentObjects
-  m_TagString: Untagged
+  m_TagString: Persistent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,6 +156,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fe70c95fb1e7614a9aaecc003efd15c, type: 3}
+--- !u!1 &5944612949524041384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4454800994938188938, guid: 1fe70c95fb1e7614a9aaecc003efd15c, type: 3}
+  m_PrefabInstance: {fileID: 8047123415150737954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2308014302648027814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5944612949524041384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769a49aa231ce38469add82de5da5b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockedDoors: []
+  pickedItems: []
+  inventory: []
+  doors: []
 --- !u!4 &5944612949524041390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4454800994938188940, guid: 1fe70c95fb1e7614a9aaecc003efd15c, type: 3}
