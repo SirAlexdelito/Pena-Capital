@@ -113,10 +113,15 @@ public class OpenLockedDoor : MonoBehaviour
                             }
                         }
                         coroutineAllowed = true;
-                        GameObject.Destroy(IM.ItemContent.Find((IM.SelectedContent.GetChild(0)).name).gameObject);
-                        IM.Items.Remove(IM.selected);
-                        GameObject.Destroy(IM.SelectedContent.GetChild(0).gameObject);
-                        IM.selected = null;
+                        var af = IM.SelectedContent.GetChild(0).name;
+                        var ass = af.Substring(0,af.Length-7);
+                        var oo = IM.ItemContent.Find(ass);
+                        var ooo = IM.SelectedContent.GetChild(0);
+                        GameObject.DestroyImmediate(oo.gameObject);
+                        GameObject.DestroyImmediate(ooo.gameObject);
+                        IM.InventoryItem = IM.ItemContent.GetChild(0).gameObject;
+                        IM.Remove(IM.selected);
+                        // IM.selected = null;
                         DisplayText.Instance.changeText("usado " + comprobar);
                         yield return new WaitForSeconds(2);
                         DisplayText.Instance.changeText("");

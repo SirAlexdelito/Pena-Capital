@@ -67,15 +67,19 @@ public class SaveGame : MonoBehaviour
             {
                 var s = x.Substring(12, x.Length - 12);
                 GameObject.Find(s).GetComponent<OpenLockedDoor>().OpenStatic();
+                SavingElements.Instance.lockedDoors.Add(GameObject.Find(s).GetComponent<OpenLockedDoor>());
             }
             else if (x.Contains("Door"))
             {
                 var s = x.Substring(6, x.Length - 6);
                 GameObject.Find(s).GetComponent<OpenDoor>().OpenStatic();
+                SavingElements.Instance.doors.Add(GameObject.Find(s).GetComponent<OpenDoor>());
             }
             else if (x.Contains("PickeableObject"))
             {
-                Destroy(GameObject.Find(qRead.Read<string>(x)));
+               var s = qRead.Read<string>(x);
+                Destroy(GameObject.Find(s));
+                SavingElements.Instance.pickedItems.Add(s);
             }
             else if (x.Contains("Iinventory"))
             {

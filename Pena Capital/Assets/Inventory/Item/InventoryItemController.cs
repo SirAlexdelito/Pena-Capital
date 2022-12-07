@@ -12,6 +12,8 @@ public class InventoryItemController : MonoBehaviour
     }
     public void Use()
     {
+        if(this.transform.parent.name=="SelectedItemContent")return;
+        InventoryManager.Instance.InventoryItem=this.gameObject;
         InventoryManager.Instance.SetSelected(Item);
         CursorVisibility.Instance.Close();
         OpenInventory.Instance.Close();

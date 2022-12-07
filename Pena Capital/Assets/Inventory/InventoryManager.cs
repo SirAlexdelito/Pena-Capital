@@ -24,6 +24,8 @@ public class InventoryManager : MonoBehaviour
     public void Remove(Item item)
     {
         Items.Remove(item);
+        SetInventoryItems();
+
     }
     List<string> names()
     {
@@ -38,15 +40,15 @@ public class InventoryManager : MonoBehaviour
             // List<string> res = names();
             // if (res.Contains(InventoryItem.name))
             // {
-                InventoryItem.name = item.name;
-                if (ItemContent.Find(InventoryItem.name + "(Clone)") == null)
-                {
-                    GameObject obj = Instantiate(InventoryItem, ItemContent);
-                    var ItemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
-                    var ItemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
-                    ItemName.text = item.itemName;
-                    ItemIcon.sprite = item.icon;
-                }
+            InventoryItem.name = item.name;
+            if (ItemContent.Find(InventoryItem.name + "(Clone)") == null && ItemContent.Find(InventoryItem.name) == null)
+            {
+                GameObject obj = Instantiate(InventoryItem, ItemContent);
+                var ItemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
+                var ItemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+                ItemName.text = item.itemName;
+                ItemIcon.sprite = item.icon;
+            }
             // }
         }
         SetInventoryItems();

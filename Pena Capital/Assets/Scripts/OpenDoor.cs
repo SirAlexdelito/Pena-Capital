@@ -34,7 +34,7 @@ public class OpenDoor : MonoBehaviour
     public void OpenStatic()
     {
         doorOpened = true;
-        transform.localRotation = Quaternion.Euler(a, b, -75);
+        transform.localRotation = Quaternion.Euler(a, g, c);
     }
     private void OnMouseDown()
     {
