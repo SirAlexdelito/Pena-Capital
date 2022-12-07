@@ -10,7 +10,9 @@ public class OpenDoor : MonoBehaviour
     private float c;
     public float g;
     public GameObject Inventory;
-    //public GameObject doorWing; 
+    //public GameObject doorWing;
+    public Quaternion startingPos { get; private set; }
+    public Quaternion actualPos { get; private set; } 
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +26,6 @@ public class OpenDoor : MonoBehaviour
             if (((GameObject)x).CompareTag("Inventory"))
                 Inventory = x;
     }
-<<<<<<< Updated upstream
-
-=======
     public bool IsOpen()
     {
         if (actualPos != startingPos)
@@ -38,7 +37,6 @@ public class OpenDoor : MonoBehaviour
         doorOpened = true;
         transform.localRotation = Quaternion.Euler(a, g, c);
     }
->>>>>>> Stashed changes
     private void OnMouseDown()
     {
         Invoke("RunCoroutine", 0f);

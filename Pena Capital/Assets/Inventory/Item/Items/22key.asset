@@ -15,8 +15,4 @@ MonoBehaviour:
   id: 1
   itemName: 2-2Key
   value: 1
-<<<<<<< Updated upstream
   icon: {fileID: 21300000, guid: dfddca1da2d1c3c478ba9616af6f3246, type: 3}
-=======
-  icon: {fileID: 21300000, guid: d3d52466d1b95e44fbff398905d1cf25, type: 2}
->>>>>>> Stashed changes
