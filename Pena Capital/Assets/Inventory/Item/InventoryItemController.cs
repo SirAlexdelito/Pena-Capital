@@ -12,8 +12,11 @@ public class InventoryItemController : MonoBehaviour
     }
     public void Use()
     {
-        InventoryManager.Instance.SetSelected(Item);
-        CursorVisibility.Instance.Close();
-        OpenInventory.Instance.Close();
+        if(this.transform.parent.name!="SelectedItemContent")
+        {
+            InventoryManager.Instance.SetSelected(Item);
+            CursorVisibility.Instance.Close();
+            OpenInventory.Instance.Close();
+        }
     }
 }

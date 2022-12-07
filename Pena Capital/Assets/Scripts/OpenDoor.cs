@@ -24,7 +24,21 @@ public class OpenDoor : MonoBehaviour
             if (((GameObject)x).CompareTag("Inventory"))
                 Inventory = x;
     }
+<<<<<<< Updated upstream
 
+=======
+    public bool IsOpen()
+    {
+        if (actualPos != startingPos)
+            return true;
+        else return false;
+    }
+    public void OpenStatic()
+    {
+        doorOpened = true;
+        transform.localRotation = Quaternion.Euler(a, g, c);
+    }
+>>>>>>> Stashed changes
     private void OnMouseDown()
     {
         Invoke("RunCoroutine", 0f);
