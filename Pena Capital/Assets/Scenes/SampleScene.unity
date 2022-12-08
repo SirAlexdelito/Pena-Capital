@@ -8650,6 +8650,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 522fa92f120aee6498c53d9e28f4ff0f, type: 3}
   m_PrefabInstance: {fileID: 282201973}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1536062280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1536062282}
+  - component: {fileID: 1536062281}
+  m_Layer: 0
+  m_Name: Tuto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1536062281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536062280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2527451c2769b8488abd2f054717eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1536062282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536062280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 612, y: 517.87, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559062150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4759061836873379277, guid: b724059e1bcc388458a6480a47fa86b3, type: 3}
@@ -11618,7 +11662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
       propertyPath: m_text
-      value: 
+      value: asdf
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
+      propertyPath: m_fontSize
+      value: 25.62
       objectReference: {fileID: 0}
     - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
       propertyPath: m_margin.x
@@ -11627,6 +11675,38 @@ PrefabInstance:
     - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
       propertyPath: m_margin.z
       value: -191.67227
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 56ba8634523447c44bddd19ee0f7fbed, type: 2}
+    - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3443994051509380454, guid: 56ba8634523447c44bddd19ee0f7fbed, type: 2}
+    - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117423192083994277, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
+      propertyPath: m_overrideHtmlColors
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a1286d9ad677db4a938790e2e21c3d5, type: 3}
