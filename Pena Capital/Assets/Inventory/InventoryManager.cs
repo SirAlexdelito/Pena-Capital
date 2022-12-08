@@ -44,10 +44,15 @@ public class InventoryManager : MonoBehaviour
             }catch(Exception ex){
                 InventoryItem = defaultItem;
             }
-            InventoryItem.name = item.name;
-            if (ItemContent.Find(InventoryItem.name + "(Clone)") == null && ItemContent.Find(InventoryItem.name) == null)
+            // GameObject go = new GameObject();
+            // go = InventoryItem;
+            // go.name = item.name;
+            string n = item.name;
+            if (ItemContent.Find(n + "(Clone)") == null && ItemContent.Find(n) == null)
             {
+                
                 GameObject obj = Instantiate(InventoryItem, ItemContent);
+                ItemContent.GetChild(ItemContent.childCount-1).name=n;
                 var ItemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
                 var ItemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
                 ItemName.text = item.itemName;
