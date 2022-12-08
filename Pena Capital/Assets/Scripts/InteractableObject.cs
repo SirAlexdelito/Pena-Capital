@@ -10,10 +10,7 @@ public class InteractableObject : MonoBehaviour
     private GameObject Inventory;
     public string comprobar;
     public string actionName;
-
-    //public GameObject doorWing; 
-
-    // Start is called before the first frame update
+    public Action action;
     void Start()
     {
         interacted = false;
@@ -47,13 +44,21 @@ public class InteractableObject : MonoBehaviour
                     {
                         coroutineAllowed = false;
 
-                        //DO
+                        coroutineAllowed = false;
+                        
+                        interacted=true;
+                        coroutineAllowed = true;
 
                         coroutineAllowed = true;
-                        GameObject.Destroy(IM.ItemContent.Find((IM.SelectedContent.GetChild(0)).name).gameObject);
-                        IM.Items.Remove(IM.selected);
-                        GameObject.Destroy(IM.SelectedContent.GetChild(0).gameObject);
-                        IM.selected = null;
+                        var itemNameFull = IM.SelectedContent.GetChild(0).name;
+                        var itemName = itemNameFull.Substring(0,itemNameFull.Length-7);
+                        var objectContent = IM.ItemContent.Find(itemName);
+                        var objectSelected = IM.SelectedContent.GetChild(0);
+                        GameObject.DestroyImmediate(objectContent.gameObject);
+                        GameObject.DestroyImmediate(objectSelected.gameObject);
+                        // IM.InventoryItem = IM.ItemContent.GetChild(0).gameObject;
+                        IM.Remove(IM.selected);
+                        action.RunCoroutine();
                         DisplayText.Instance.changeText("usado " + comprobar);
                         yield return new WaitForSeconds(2);
                         DisplayText.Instance.changeText("");

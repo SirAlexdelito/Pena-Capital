@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryItem;
     public InventoryItemController[] InventoryItems;
     public Item selected;
+    public GameObject defaultItem;
     private void Awake()
     {
         Instance = this;
@@ -20,6 +22,7 @@ public class InventoryManager : MonoBehaviour
     public void Add(Item item)
     {
         Items.Add(item);
+        ListItems();
     }
     public void Remove(Item item)
     {
@@ -37,13 +40,20 @@ public class InventoryManager : MonoBehaviour
     {
         foreach (var item in Items)
         {
-            // List<string> res = names();
-            // if (res.Contains(InventoryItem.name))
-            // {
-            InventoryItem.name = item.name;
-            if (ItemContent.Find(InventoryItem.name + "(Clone)") == null && ItemContent.Find(InventoryItem.name) == null)
+            try{
+                var t = InventoryItem.transform;
+            }catch(Exception ex){
+                InventoryItem = defaultItem;
+            }
+            // GameObject go = new GameObject();
+            // go = InventoryItem;
+            // go.name = item.name;
+            string n = item.name;
+            if (ItemContent.Find(n + "(Clone)") == null && ItemContent.Find(n) == null)
             {
+                
                 GameObject obj = Instantiate(InventoryItem, ItemContent);
+                ItemContent.GetChild(ItemContent.childCount-1).name=n;
                 var ItemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
                 var ItemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
                 ItemName.text = item.itemName;

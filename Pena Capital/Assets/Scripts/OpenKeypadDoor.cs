@@ -96,10 +96,14 @@ public class OpenKeypadDoor : MonoBehaviour
                             }
                         }
                         coroutineAllowed = true;
-                        GameObject.Destroy(IM.ItemContent.Find((IM.SelectedContent.GetChild(0)).name).gameObject);
-                        IM.Items.Remove(IM.selected);
-                        GameObject.Destroy(IM.SelectedContent.GetChild(0).gameObject);
-                        IM.selected = null;
+                        var itemNameFull = IM.SelectedContent.GetChild(0).name;
+                        var itemName = itemNameFull.Substring(0,itemNameFull.Length-7);
+                        var objectContent = IM.ItemContent.Find(itemName);
+                        var objectSelected = IM.SelectedContent.GetChild(0);
+                        GameObject.DestroyImmediate(objectContent.gameObject);
+                        GameObject.DestroyImmediate(objectSelected.gameObject);
+                        // IM.InventoryItem = IM.ItemContent.GetChild(0).gameObject;
+                        IM.Remove(IM.selected);
                         DisplayText.Instance.changeText("usado " + comprobar);
                         yield return new WaitForSeconds(2);
                         DisplayText.Instance.changeText("");
