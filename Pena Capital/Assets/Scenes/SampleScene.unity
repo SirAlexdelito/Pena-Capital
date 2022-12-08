@@ -9763,6 +9763,10 @@ PrefabInstance:
       propertyPath: persistentObject
       value: 
       objectReference: {fileID: 6259578155694173363, guid: 40c5d273aa8338e4aaa268cadb765c6c, type: 3}
+    - target: {fileID: 8168657037130777603, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 8168657037976744069, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -9791,11 +9795,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -124
       objectReference: {fileID: 0}
+    - target: {fileID: 8168657037976744187, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168657037976744187, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e5582d673d00d594ba6bbe202fe9618e, type: 3}
     - target: {fileID: 8168657038044698405, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2548459825701626673, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
+    - {fileID: 9147293193636405910, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
 --- !u!4 &1729447805 stripped
 Transform:
@@ -11293,6 +11307,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 522fa92f120aee6498c53d9e28f4ff0f, type: 3}
   m_PrefabInstance: {fileID: 503777257}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2006885808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8168657038044698407, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
+  m_PrefabInstance: {fileID: 1726394788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!222 &2006885814
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006885808}
+  m_CullTransparentMesh: 1
 --- !u!4 &2015253842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c5b670bdbe88d844481b03aa3440274c, type: 3}
