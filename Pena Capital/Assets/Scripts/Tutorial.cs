@@ -47,7 +47,9 @@ public class Tutorial : MonoBehaviour
         yield return new WaitForSeconds(3f);
         DisplayText.Instance.changeTextTuto("");
         yield return new WaitForSeconds(1f);
+        DisplayText.Instance.Text.color=Color.red;
         DisplayText.Instance.changeTextTuto("Debo encontrar la salida...");
+        DisplayText.Instance.Text.color=Color.white;
         yield return new WaitForSeconds(4f);
         DisplayText.Instance.onTuto=false;
         Destroy(this.gameObject);
