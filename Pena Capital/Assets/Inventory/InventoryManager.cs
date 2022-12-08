@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryItem;
     public InventoryItemController[] InventoryItems;
     public Item selected;
+    public GameObject defaultItem;
     private void Awake()
     {
         Instance = this;
@@ -37,9 +39,11 @@ public class InventoryManager : MonoBehaviour
     {
         foreach (var item in Items)
         {
-            // List<string> res = names();
-            // if (res.Contains(InventoryItem.name))
-            // {
+            try{
+                var t = InventoryItem.transform;
+            }catch(Exception ex){
+                InventoryItem = defaultItem;
+            }
             InventoryItem.name = item.name;
             if (ItemContent.Find(InventoryItem.name + "(Clone)") == null && ItemContent.Find(InventoryItem.name) == null)
             {

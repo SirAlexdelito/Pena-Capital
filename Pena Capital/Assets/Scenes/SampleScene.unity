@@ -3522,7 +3522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b30fdea90e9fbc449c6c9006bc9ec8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 722942b341733db46ba21bba91744a33, type: 2}
+  Item: {fileID: 11400000, guid: ba6d3d45f49648944a99182bce9c5bc0, type: 2}
 --- !u!114 &537007823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3535,7 +3535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eca89dcf47692b499dfdb3473d510f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 722942b341733db46ba21bba91744a33, type: 2}
+  Item: {fileID: 11400000, guid: ba6d3d45f49648944a99182bce9c5bc0, type: 2}
 --- !u!4 &551586290 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1493f3e581b4f844eb85bf794128f495, type: 3}
@@ -9002,7 +9002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpened: 0
   g: 85
-  comprobar: Note
+  comprobar: Nota
   fdoor: {fileID: 560117480}
 --- !u!65 &1630204248
 BoxCollider:
@@ -9683,6 +9683,14 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2398062815939708246, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
+      propertyPath: defaultItem
+      value: 
+      objectReference: {fileID: 1173640194410808974, guid: e8d10249b87a3a747ad831ac8b83e97f, type: 3}
+    - target: {fileID: 2398062815939708246, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
+      propertyPath: InventoryItem
+      value: 
+      objectReference: {fileID: 1173640194410808974, guid: e8d10249b87a3a747ad831ac8b83e97f, type: 3}
     - target: {fileID: 3962483876762256395, guid: 3a605c35641bbec478fc6c6e01bacb1a, type: 3}
       propertyPath: m_Name
       value: InventorySystem
@@ -10672,7 +10680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eca89dcf47692b499dfdb3473d510f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 4b57d74e5f2b87747be71d06fa602465, type: 2}
+  Item: {fileID: 11400000, guid: 1406b4e2200149941a0d974f6d80fb17, type: 2}
 --- !u!114 &1841810465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10685,7 +10693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b30fdea90e9fbc449c6c9006bc9ec8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 4b57d74e5f2b87747be71d06fa602465, type: 2}
+  Item: {fileID: 11400000, guid: 1406b4e2200149941a0d974f6d80fb17, type: 2}
 --- !u!65 &1841810466
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11213,22 +11221,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -6470118700378261276, guid: fba2c0b9a22113a4fb722ad2e77237f2, type: 3}
   m_PrefabInstance: {fileID: 1984256775}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1984256777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984256776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 567ed174bd939b543a3248624422113e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interacted: 0
-  actionName: Buscar
-  action: {fileID: 1232714546}
-  comprobar: Cuchillo
 --- !u!65 &1984256779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11242,6 +11234,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.024215642, y: 0.00500576, z: 0.014407089}
   m_Center: {x: 0.000007016585, y: 0.00014138014, z: -0.000106315376}
+--- !u!114 &1984256783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984256776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1041632b80029a64a90b4efff9272a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interacted: 0
+  comprobar: Cuchillo
+  actionName: Buscar
+  action: {fileID: 1232714546}
 --- !u!1 &1987918791 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7120836742340144790, guid: f53934273cb6eaf409f3dbb05eaaff22, type: 3}
@@ -12631,13 +12639,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1832398360139696510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 567ed174bd939b543a3248624422113e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1041632b80029a64a90b4efff9272a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interacted: 0
+  comprobar: Escape key
   actionName: Abrir
   action: {fileID: 933003700}
-  comprobar: Escape Key
 --- !u!1 &8672161100053583583
 GameObject:
   m_ObjectHideFlags: 0

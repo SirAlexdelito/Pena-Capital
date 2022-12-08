@@ -60,10 +60,10 @@ public class FreeInteractableObject : MonoBehaviour
                     action.RunCoroutine();
                     interacted=true;
                     coroutineAllowed = true;
-                    GameObject.Destroy(IM.ItemContent.Find((IM.SelectedContent.GetChild(0)).name).gameObject);
-                    IM.Items.Remove(IM.selected);
-                    GameObject.Destroy(IM.SelectedContent.GetChild(0).gameObject);
-                    IM.selected = null;
+                    // GameObject.Destroy(IM.ItemContent.Find((IM.SelectedContent.GetChild(0)).name).gameObject);
+                    // IM.Items.Remove(IM.selected);
+                    // GameObject.Destroy(IM.SelectedContent.GetChild(0).gameObject);
+                    // IM.selected = null;
                     DisplayText.Instance.changeText("Usado " + comprobar);
                     yield return new WaitForSeconds(2);
                     DisplayText.Instance.changeText("");
