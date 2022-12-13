@@ -33,7 +33,7 @@ public class SaveGame : MonoBehaviour
         SavingElements.Instance.lockedDoors.ForEach(x => { if (x != null) qSave.Write("LockedDoor: " + x.gameObject.name, x.doorOpened); });
         SavingElements.Instance.doors.ForEach(x => { if (x != null) qSave.Write("Door: " + x.gameObject.name, x.doorOpened); });
         SavingElements.Instance.pickedItems.ForEach(x => { if (x != null) qSave.Write("PickeableObject: " + x, x); });
-        IM.Items.ForEach(i => qSave.Write("Iinventory: " + i.name, i));
+        IM.Items.ForEach(i => qSave.Write("Iinventory: " + i.name, i.name));
         qSave.Commit();
         screen.SetActive(false);
         CursorVisibility.Instance.Close();
@@ -83,7 +83,11 @@ public class SaveGame : MonoBehaviour
             }
             else if (x.Contains("Iinventory"))
             {
-                InventoryItems.Add(qRead.Read<Item>(x));
+                var s = qRead.Read<string>(x);
+                // s = s.Substring(12, x.Length - 12);
+                Item i = Resources.Load<Item>(s);
+                InventoryItems.Add(i);
+                
             }
         });
 
