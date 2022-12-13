@@ -70,7 +70,7 @@ public class OpenLockedDoor : MonoBehaviour
                                 {
                                     transform.localRotation = Quaternion.Euler(a, +i, c);
                                     actualPos = Quaternion.Euler(a, +i, c);
-                                    
+                                    GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().Play();
                                     yield return new WaitForSeconds(0f);
                                 }
                                 SavingElements.Instance.lockedDoors.Add(this);
@@ -95,10 +95,11 @@ public class OpenLockedDoor : MonoBehaviour
                                 {
                                     transform.localRotation = Quaternion.Euler(a, +i, c);
                                     actualPos = Quaternion.Euler(a, +i, c);
-                                    
+                                    GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().Play();
                                     yield return new WaitForSeconds(0f);
                                 }
                                 SavingElements.Instance.lockedDoors.Add(this);
+                                
                                 doorOpened = true;
                             }
                             else
