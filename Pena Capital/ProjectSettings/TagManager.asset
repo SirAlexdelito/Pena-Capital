@@ -16,6 +16,8 @@ TagManager:
   - Persistent
   - Comic
   - BGM
+  - DoorSound
+  - PickupSound
   layers:
   - Default
   - TransparentFX

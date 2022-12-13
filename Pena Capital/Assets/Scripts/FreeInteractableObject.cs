@@ -48,9 +48,9 @@ public class FreeInteractableObject : MonoBehaviour
                     action.RunCoroutine();
                     interacted=true;
                     coroutineAllowed = true;
-                    DisplayText.Instance.changeText("Usado");
-                    yield return new WaitForSeconds(2);
-                    DisplayText.Instance.changeText("");
+                    //DisplayText.Instance.changeText("Usado");
+                    //yield return new WaitForSeconds(2);
+                    //DisplayText.Instance.changeText("");
                 }
                 else if (IM.selected != null)
                 {
@@ -64,9 +64,9 @@ public class FreeInteractableObject : MonoBehaviour
                     // IM.Items.Remove(IM.selected);
                     // GameObject.Destroy(IM.SelectedContent.GetChild(0).gameObject);
                     // IM.selected = null;
-                    DisplayText.Instance.changeText("Usado " + comprobar);
-                    yield return new WaitForSeconds(2);
-                    DisplayText.Instance.changeText("");
+                    //DisplayText.Instance.changeText("Usado " + comprobar);
+                    //yield return new WaitForSeconds(2);
+                    //DisplayText.Instance.changeText("");
                     }
                     else
                     {

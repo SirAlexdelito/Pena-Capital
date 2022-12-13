@@ -62,7 +62,7 @@ public class OpenDoor : MonoBehaviour
                         {
                             transform.localRotation = Quaternion.Euler(a, +i, c);
                             actualPos = Quaternion.Euler(a, +i, c);
-
+                            GameObject.FindGameObjectWithTag("DoorSound").GetComponent<AudioSource>().Play();
                             yield return new WaitForSeconds(0f);
                         }
                         SavingElements.Instance.doors.Add(this);
@@ -86,7 +86,7 @@ public class OpenDoor : MonoBehaviour
                         {
                             transform.localRotation = Quaternion.Euler(a, +i, c);
                             actualPos = Quaternion.Euler(a, +i, c);
-
+                            GameObject.FindGameObjectWithTag("DoorSound").GetComponent<AudioSource>().Play();
                             yield return new WaitForSeconds(0f);
                         }
                         SavingElements.Instance.doors.Add(this);

@@ -10,6 +10,7 @@ public class ItemPickUp : MonoBehaviour
         InventoryManager.Instance.Add(Item);
         SavingElements.Instance.pickedItems.Add(this.gameObject.name);
         Destroy(gameObject);
+        GameObject.FindGameObjectWithTag("PickupSound").GetComponent<AudioSource>().Play();
         DisplayText.Instance.changeText("");
     }
     void OnMouseDown(){
