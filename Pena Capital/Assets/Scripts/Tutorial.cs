@@ -18,7 +18,7 @@ public class Tutorial : MonoBehaviour
     }
     void Update()
     {
-        if (fase == 0 && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
+        if (fase == 0 && (Input.anyKey))
         {
             try
             {
