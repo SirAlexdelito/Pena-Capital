@@ -15,6 +15,7 @@ TagManager:
   - Save
   - Persistent
   - Comic
+  - BGM
   layers:
   - Default
   - TransparentFX
