@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class FreeInteractableObject : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class FreeInteractableObject : MonoBehaviour
     public string actionName;
     public Action action;
     public string comprobar;
+    private bool inRange;
 
     //public GameObject doorWing; 
 
@@ -19,15 +21,23 @@ public class FreeInteractableObject : MonoBehaviour
     {
         interacted = false;
         coroutineAllowed = true;
+        inRange = false;
         IM = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
         foreach (GameObject x in Resources.FindObjectsOfTypeAll<GameObject>())
             if (((GameObject)x).CompareTag("Inventory"))
                 Inventory = x;
     }
-
+    public void Update(){
+        FirstPersonController characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
+        if(Vector3.Distance(transform.position, characterController.transform.position) <= 2)
+        {inRange=true;}
+        else{inRange=false;}
+    }
     private void OnMouseDown()
     {
+        if(inRange){
         Invoke("RunCoroutine", 0f);
+        }
     }
 
     private void RunCoroutine()
@@ -84,11 +94,18 @@ public class FreeInteractableObject : MonoBehaviour
             }
         }
     }
-    void OnMouseEnter()
+    void OnMouseOver()
     {
-        if (!interacted)
-            if (!Inventory.activeSelf)
-                DisplayText.Instance.changeText(actionName);
+        if(inRange)
+        {
+            if (!interacted){
+                if (!Inventory.activeSelf){
+                    DisplayText.Instance.changeText(actionName);
+                }
+                else {DisplayText.Instance.changeText("");}
+            }
+        }
+        else {DisplayText.Instance.changeText("");}
     }
     void OnMouseExit()
     {
