@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class OpenLockedDoor : MonoBehaviour
 {
@@ -17,7 +18,9 @@ public class OpenLockedDoor : MonoBehaviour
     public Quaternion startingPos{ get;private set;}
     public Quaternion actualPos{get;private set;}
     //public GameObject doorWing; 
-
+    private bool inRange;
+    private RaycastHit aux;
+    private bool golpeado;
     void Awake()
     {
         doorOpened = false;
@@ -32,6 +35,20 @@ public class OpenLockedDoor : MonoBehaviour
             if (((GameObject)x).CompareTag("Inventory"))
                 Inventory = x;
     }
+    public void Update(){
+        FirstPersonController characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
+        RaycastHit hit;
+        if(Physics.Raycast(characterController.transform.position, characterController.transform.forward, hitInfo: out hit,
+                               5, LayerMask.GetMask("EnRango"))){
+                                aux=hit;
+                                golpeado=true;
+                                hit.transform.gameObject.GetComponent<OpenLockedDoor>().inRange=true;
+                               }
+        else if(golpeado){
+            golpeado=false;
+            aux.transform.gameObject.GetComponent<OpenLockedDoor>().inRange = false;
+        }
+    }
     public bool IsOpen(){
         if(actualPos!=startingPos)
         return true; else return false;
@@ -42,7 +59,9 @@ public class OpenLockedDoor : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (inRange){
         Invoke("RunCoroutine", 0f);
+        }
     }
 
     private void RunCoroutine()
@@ -143,16 +162,27 @@ public class OpenLockedDoor : MonoBehaviour
             }
         }
     }
-    void OnMouseEnter()
+    void OnMouseOver()
     {
-        if (!doorOpened)
-            if (!Inventory.activeSelf)
-                DisplayText.Instance.changeText("Abrir puerta");
+        if (inRange){
+            if (!doorOpened){
+                if (!Inventory.activeSelf){
+                    DisplayText.Instance.changeText("Abrir puerta");
+                }
+                else{
+                    DisplayText.Instance.changeText("");
+                }
+            }
+            else{
+                DisplayText.Instance.changeText("");
+            }
+        }
+        else{
+            DisplayText.Instance.changeText("");
+        }
     }
     void OnMouseExit()
     {
-        if (!doorOpened)
-            if (!Inventory.activeSelf)
-                DisplayText.Instance.changeText("");
+        DisplayText.Instance.changeText("");
     }
 }
