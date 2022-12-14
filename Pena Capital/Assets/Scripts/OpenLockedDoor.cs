@@ -19,12 +19,13 @@ public class OpenLockedDoor : MonoBehaviour
     public Quaternion actualPos{get;private set;}
     //public GameObject doorWing; 
     private bool inRange;
-    private RaycastHit aux;
-    private bool golpeado;
+    private bool espera;
     void Awake()
     {
         doorOpened = false;
         coroutineAllowed = true;
+        inRange = false;
+        espera = false;
         a = transform.localRotation.eulerAngles.x;
         b = transform.localRotation.eulerAngles.y;
         c = transform.localRotation.eulerAngles.z;
@@ -37,17 +38,9 @@ public class OpenLockedDoor : MonoBehaviour
     }
     public void Update(){
         FirstPersonController characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
-        RaycastHit hit;
-        if(Physics.Raycast(characterController.transform.position, characterController.transform.forward, hitInfo: out hit,
-                               5, LayerMask.GetMask("EnRango"))){
-                                aux=hit;
-                                golpeado=true;
-                                hit.transform.gameObject.GetComponent<OpenLockedDoor>().inRange=true;
-                               }
-        else if(golpeado){
-            golpeado=false;
-            aux.transform.gameObject.GetComponent<OpenLockedDoor>().inRange = false;
-        }
+        if(Vector3.Distance(transform.position, characterController.transform.position) <= 3)
+        {inRange=true;}
+        else{inRange=false;}
     }
     public bool IsOpen(){
         if(actualPos!=startingPos)
@@ -132,7 +125,6 @@ public class OpenLockedDoor : MonoBehaviour
                                 doorOpened = false;
                             }
                         }
-                        coroutineAllowed = true;
                         var itemNameFull = IM.SelectedContent.GetChild(0).name;
                         var itemName = itemNameFull.Substring(0,itemNameFull.Length-7);
                         var objectContent = IM.ItemContent.Find(itemName);
@@ -142,32 +134,44 @@ public class OpenLockedDoor : MonoBehaviour
                         // IM.InventoryItem = IM.ItemContent.GetChild(0).gameObject;
                         IM.Remove(IM.selected);
                         // IM.selected = null;
+                        espera = true;
                         DisplayText.Instance.changeText("usado " + comprobar);
                         yield return new WaitForSeconds(2);
                         DisplayText.Instance.changeText("");
+                        espera = false;
+                        coroutineAllowed = true;
                     }
                     else
                     {
+                        espera = true;
                         DisplayText.Instance.changeText("con esto no puedo abrir esta puerta");
                         yield return new WaitForSeconds(2);
                         DisplayText.Instance.changeText("");
+                        espera = false;
                     }
                 }
                 else
                 {
+                    espera = true;
                     DisplayText.Instance.changeText("necesito algo para abrir esta puerta");
                     yield return new WaitForSeconds(2);
                     DisplayText.Instance.changeText("");
+                    espera = false;
                 }
             }
         }
     }
     void OnMouseOver()
-    {
-        if (inRange){
-            if (!doorOpened){
-                if (!Inventory.activeSelf){
-                    DisplayText.Instance.changeText("Abrir puerta");
+    {  
+        if(!espera){
+            if (inRange){
+                if (!doorOpened){
+                    if (!Inventory.activeSelf){
+                        DisplayText.Instance.changeText("Abrir puerta");
+                    }
+                    else{
+                        DisplayText.Instance.changeText("");
+                    }
                 }
                 else{
                     DisplayText.Instance.changeText("");
@@ -176,9 +180,6 @@ public class OpenLockedDoor : MonoBehaviour
             else{
                 DisplayText.Instance.changeText("");
             }
-        }
-        else{
-            DisplayText.Instance.changeText("");
         }
     }
     void OnMouseExit()

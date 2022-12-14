@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityStandardAssets.Characters.FirstPerson;
 public class OpenKeypadDoor : MonoBehaviour
 {
     public bool doorOpened;
@@ -14,6 +14,8 @@ public class OpenKeypadDoor : MonoBehaviour
     public float g;
     public string comprobar;
     public GameObject fdoor; 
+    private bool inRange;
+    private bool espera;
 
     //public GameObject doorWing; 
 
@@ -30,10 +32,17 @@ public class OpenKeypadDoor : MonoBehaviour
             if (((GameObject)x).CompareTag("Inventory"))
                 Inventory = x;
     }
-
+    public void Update(){
+        FirstPersonController characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
+        if(Vector3.Distance(transform.position, characterController.transform.position) <= 3)
+        {inRange=true;}
+        else{inRange=false;}
+    }
     private void OnMouseDown()
     {
+        if(inRange){
         Invoke("RunCoroutine", 0f);
+        }
     }
 
     private void RunCoroutine()
@@ -104,31 +113,52 @@ public class OpenKeypadDoor : MonoBehaviour
                         GameObject.DestroyImmediate(objectSelected.gameObject);
                         // IM.InventoryItem = IM.ItemContent.GetChild(0).gameObject;
                         IM.Remove(IM.selected);
+                        espera = true;
                         DisplayText.Instance.changeText("usado " + comprobar);
                         yield return new WaitForSeconds(2);
                         DisplayText.Instance.changeText("");
+                        espera = false;
                     }
                     else
                     {
+                        espera = true;
                         DisplayText.Instance.changeText("con esto no puedo abrir esta puerta");
                         yield return new WaitForSeconds(2);
                         DisplayText.Instance.changeText("");
+                        espera = false;
                     }
                 }
                 else
                 {
+                    espera = true;
                     DisplayText.Instance.changeText("necesito algo para abrir esta puerta");
                     yield return new WaitForSeconds(2);
                     DisplayText.Instance.changeText("");
+                    espera = false;
                 }
             }
         }
     }
-    void OnMouseEnter()
+    void OnMouseOver()
     {
-        if (!doorOpened)
-            if (!Inventory.activeSelf)
-                DisplayText.Instance.changeText("Abrir puerta");
+        if(!espera){
+            if(inRange){
+                if (!doorOpened){
+                    if (!Inventory.activeSelf){
+                        DisplayText.Instance.changeText("Abrir puerta");
+                    }
+                    else{
+                        DisplayText.Instance.changeText("");
+                    }
+                }
+                else{
+                    DisplayText.Instance.changeText("");
+                }
+            }
+            else{
+                DisplayText.Instance.changeText("");
+            }
+        }
     }
     void OnMouseExit()
     {

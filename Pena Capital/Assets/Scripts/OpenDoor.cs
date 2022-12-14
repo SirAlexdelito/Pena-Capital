@@ -16,7 +16,6 @@ public class OpenDoor : MonoBehaviour
     public Quaternion actualPos { get; private set; }
     // Start is called before the first frame update
     private bool inRange;
-    private RaycastHit aux;
     private bool golpeado;
     void Awake()
     {
@@ -32,17 +31,9 @@ public class OpenDoor : MonoBehaviour
     }
     public void Update(){
         FirstPersonController characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
-        RaycastHit hit;
-        if(Physics.Raycast(characterController.transform.position, characterController.transform.forward, hitInfo: out hit,
-                               5, LayerMask.GetMask("EnRango"))){
-                                aux=hit;
-                                golpeado=true;
-                                hit.transform.gameObject.GetComponent<OpenDoor>().inRange=true;
-                               }
-        else if(golpeado){
-            golpeado=false;
-            aux.transform.gameObject.GetComponent<OpenDoor>().inRange = false;
-        }
+        if(Vector3.Distance(transform.position, characterController.transform.position) <= 5)
+        {inRange=true;}
+        else{inRange=false;}
     }
     public bool IsOpen()
     {
