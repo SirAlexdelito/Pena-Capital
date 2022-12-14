@@ -12531,7 +12531,7 @@ GameObject:
   - component: {fileID: 6490484799351231029}
   - component: {fileID: 9076480309716313856}
   - component: {fileID: 9076480309716313857}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "puerta sala ejecuci\xF3n"
   m_TagString: LockedDoor
   m_Icon: {fileID: 0}
