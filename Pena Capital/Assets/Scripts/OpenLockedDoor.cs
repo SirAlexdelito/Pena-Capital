@@ -6,6 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class OpenLockedDoor : MonoBehaviour
 {
     public bool doorOpened;
+    public string numero;
     private bool coroutineAllowed;
     private float a;
     private float b;
@@ -167,7 +168,7 @@ public class OpenLockedDoor : MonoBehaviour
             if (inRange){
                 if (!doorOpened){
                     if (!Inventory.activeSelf){
-                        DisplayText.Instance.changeText("Abrir puerta");
+                        DisplayText.Instance.changeText("Abrir puerta " + numero);
                     }
                     else{
                         DisplayText.Instance.changeText("");

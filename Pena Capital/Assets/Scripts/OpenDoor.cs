@@ -5,6 +5,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class OpenDoor : MonoBehaviour
 {
     public bool doorOpened;
+    public string numero;
     private bool coroutineAllowed;
     private float a;
     private float b;
@@ -16,7 +17,6 @@ public class OpenDoor : MonoBehaviour
     public Quaternion actualPos { get; private set; }
     // Start is called before the first frame update
     private bool inRange;
-    private bool golpeado;
     void Awake()
     {
         doorOpened = false;
@@ -31,7 +31,7 @@ public class OpenDoor : MonoBehaviour
     }
     public void Update(){
         FirstPersonController characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
-        if(Vector3.Distance(transform.position, characterController.transform.position) <= 5)
+        if(Vector3.Distance(transform.position, characterController.transform.position) <= 3)
         {inRange=true;}
         else{inRange=false;}
     }
@@ -124,7 +124,7 @@ public class OpenDoor : MonoBehaviour
             if (!doorOpened)
                 {
                     if (!Inventory.activeSelf)
-                    {DisplayText.Instance.changeText("Abrir puerta");}
+                    {DisplayText.Instance.changeText("Abrir puerta " + numero);}
                     else{
                     DisplayText.Instance.changeText("");
                     }
