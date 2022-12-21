@@ -6,15 +6,17 @@ public class ItemPickUp : MonoBehaviour
 {
     public Item Item;
     private bool inRange = false;
-    public string texto; 
+    public string texto;
+    private bool cogido = false;
     void PickUp()
     {
         inRange=false;
+        cogido=true;
         InventoryManager.Instance.Add(Item);
         SavingElements.Instance.pickedItems.Add(this.gameObject.name);
         Destroy(gameObject);
         GameObject.FindGameObjectWithTag("PickupSound").GetComponent<AudioSource>().Play();
-        DisplayText.Instance.changeText(texto);
+        DisplayText.Instance.changeText("");
     }
     /*public void Update(){
         FirstPersonController characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
@@ -44,7 +46,10 @@ public class ItemPickUp : MonoBehaviour
         if(inRange){
         DisplayText.Instance.changeText("Coger " + Item.name);
         }
-        else{DisplayText.Instance.changeText("");}
+        else{
+            if (cogido) {DisplayText.Instance.changeText(texto);}
+            else {DisplayText.Instance.changeText("");}
+        }
     }
     void OnMouseExit(){
         DisplayText.Instance.changeText("");

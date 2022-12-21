@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Nota
   m_EditorClassIdentifier: 
   id: 4
-  itemName: Code
+  itemName: Codigo
   value: 4
   icon: {fileID: 21300000, guid: bcd8d71ea41d58948a6c8d3ce1938a79, type: 3}

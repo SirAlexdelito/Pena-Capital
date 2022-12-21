@@ -478,7 +478,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c27d363482e010f489169a9564c61e39, type: 2}
+  - {fileID: 2100000, guid: abe25b2f01ccc3d4ca1bb265eeeb5653, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7690,7 +7690,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8291800082753768549}
-  m_RootOrder: 62
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 83.343, y: -166.503, z: -160.485}
 --- !u!108 &1218939580
 Light:
@@ -8514,7 +8514,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a83dcb5ded80b2f4ca19ed6a79ab115b, type: 2}
+  - {fileID: 2100000, guid: abe25b2f01ccc3d4ca1bb265eeeb5653, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10872,7 +10872,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c5b670bdbe88d844481b03aa3440274c, type: 3}
       propertyPath: m_RootOrder
-      value: 46
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c5b670bdbe88d844481b03aa3440274c, type: 3}
       propertyPath: m_LocalScale.x
@@ -10892,7 +10892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c5b670bdbe88d844481b03aa3440274c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.09
+      value: 4.32
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c5b670bdbe88d844481b03aa3440274c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10957,7 +10957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eca89dcf47692b499dfdb3473d510f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 0}
+  Item: {fileID: 11400000, guid: 0c3aad916b970f84cb526f62b629cbf5, type: 2}
 --- !u!114 &1700885047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10970,8 +10970,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b30fdea90e9fbc449c6c9006bc9ec8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 0}
+  Item: {fileID: 11400000, guid: 0c3aad916b970f84cb526f62b629cbf5, type: 2}
   texto: '"Se lo que escondiste en la almohada"'
+--- !u!65 &1700885050
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700885045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0013320709, y: 0.0006795363, z: 0.00008072672}
+  m_Center: {x: -0.000000007450581, y: 0, z: 0.000000014901161}
 --- !u!1 &1713855311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4759061836986993184, guid: b724059e1bcc388458a6480a47fa86b3, type: 3}
@@ -14275,6 +14288,7 @@ Transform:
   - {fileID: 614508421}
   - {fileID: 1630204246}
   - {fileID: 560117481}
+  - {fileID: 1218939579}
   - {fileID: 1886240780}
   - {fileID: 830931113}
   - {fileID: 2070123825}
@@ -14304,7 +14318,6 @@ Transform:
   - {fileID: 1688132113}
   - {fileID: 186080387}
   - {fileID: 1334270972}
-  - {fileID: 1218939579}
   - {fileID: 908309044}
   - {fileID: 1322204694}
   - {fileID: 1919600998}
