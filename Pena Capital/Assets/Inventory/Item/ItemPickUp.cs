@@ -6,6 +6,7 @@ public class ItemPickUp : MonoBehaviour
 {
     public Item Item;
     private bool inRange = false;
+    public string texto; 
     void PickUp()
     {
         inRange=false;
@@ -13,7 +14,7 @@ public class ItemPickUp : MonoBehaviour
         SavingElements.Instance.pickedItems.Add(this.gameObject.name);
         Destroy(gameObject);
         GameObject.FindGameObjectWithTag("PickupSound").GetComponent<AudioSource>().Play();
-        DisplayText.Instance.changeText("");
+        DisplayText.Instance.changeText(texto);
     }
     /*public void Update(){
         FirstPersonController characterController = GameObject.FindGameObjectWithTag("FirstPersonController").GetComponent<FirstPersonController>();
